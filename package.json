@@ -1,0 +1,26 @@
+{
+  "name": "myapp",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1"
+  },
+  "devDependencies": {
+    "react-helmet": "^5.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build:test": "cd src/config && cp env.test.js env.js && cd ../../ && npm run build",
+    "build:prod": "cd src/config && cp env.prod.js env.js && cd ../../ && npm run build",
+    "deploy:test": "scp -r build/* root@47.100.113.221:/opt/node_web/a.yingbeijf.com_dev/channel",
+    "deploy:prod": "scp -r build/* root@139.224.68.89:/var/www/a.yingbeijf.com/act20170803/channel"
+  },
+  "homepage": "./"
+}
